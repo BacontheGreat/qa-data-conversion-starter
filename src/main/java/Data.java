@@ -34,8 +34,9 @@ public class Data {
 
     public String getFormattedDownloadTime() {
         double time = calculateDownloadTime();
-        int minutes = (int) time;
-        int seconds = (int) ((time - minutes) * 60);
+        // reworked equations to get correct minutes and seconds
+        int minutes = (int) time / 60;
+        int seconds = (int) time % 60;
         return minutes + " minutes " + seconds + " seconds";
     }
 
